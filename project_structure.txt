@@ -1,0 +1,79 @@
+.editorconfig
+.gitignore
+.husky
+    pre-commit
+    pre-push
+    _
+        .gitignore
+        applypatch-msg
+        commit-msg
+        h
+        husky.sh
+        post-applypatch
+        post-checkout
+        post-commit
+        post-merge
+        post-rewrite
+        pre-applypatch
+        pre-auto-gc
+        pre-commit
+        pre-merge-commit
+        pre-push
+        pre-rebase
+        prepare-commit-msg
+backend
+    .env.example
+    .eslintrc.js
+    .prettierrc
+    eslint.config.mjs
+    nest-cli.json
+    package-lock.json
+    package.json
+    README.md
+    src
+        app.controller.spec.ts
+        app.controller.ts
+        app.module.ts
+        app.service.ts
+        main.ts
+    test
+        app.e2e-spec.ts
+        jest-e2e.json
+    tsconfig.build.json
+    tsconfig.json
+docker
+    docker-compose.yml
+    Dockerfile.backend
+    Dockerfile.frontend
+frontend
+    .eslintrc.json
+    .prettierrc
+    angular.json
+    eslint.config.mjs
+    package-lock.json
+    package.json
+    public
+        favicon.ico
+    README.md
+    src
+        app
+            app.component.html
+            app.component.scss
+            app.component.spec.ts
+            app.component.ts
+            app.config.server.ts
+            app.config.ts
+            app.routes.ts
+        index.html
+        main.server.ts
+        main.ts
+        server.ts
+        styles.scss
+    tsconfig.app.json
+    tsconfig.json
+    tsconfig.spec.json
+package-lock.json
+package.json
+project_structure.txt
+README.md
+test.js

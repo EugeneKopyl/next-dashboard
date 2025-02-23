@@ -1,0 +1,30 @@
+# Temprory files and directories
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.tmp
+
+# environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# cash
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backend-specific
+backend/.env
+backend/dist/
+backend/node_modules/
+
+# Frontend-specific
+frontend/dist/
+frontend/.angular/
+frontend/node_modules/
