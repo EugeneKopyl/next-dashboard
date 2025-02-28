@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ..  # Root project path
+      dockerfile: docker/Dockerfile.dev.yml
+    ports:
+      - "3000:3000" # Backend port
+    volumes:
+      - ../backend:/app/backend # Hot reload for the backend
+      - /app/backend/node_modules # Ignore node_modules
+
+  frontend:
+    build:
+      context: ..  # Root project path
+      dockerfile: docker/Dockerfile.dev.yml
+    ports:
+      - "4200:4200" # Frontend port
+    volumes:
+      - ../frontend:/app/frontend # Hot reload for the frontend
+      - /app/frontend/node_modules # Ignore node_modules
+    depends_on:
+      - backend
+    links:
+      - backend
+
+#  nginx:
+#    image: nginx:alpine
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+#    depends_on:
+#      - backend
+#      - frontend

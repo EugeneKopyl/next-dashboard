@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod.yml
+    ports:
+      - "80:80" # Port for Nginx
+    environment:
+      - NODE_ENV=production

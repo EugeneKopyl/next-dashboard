@@ -19,8 +19,8 @@
     "test:frontend": "cd frontend && npm run test:headless",
     "test": "npm run test:backend && npm run test:frontend",
     "prepare": "husky init",
-    "docker:up": "docker-compose up --build",
-    "docker:down": "docker-compose down"
+    "docker:up": "docker-compose -f docker/docker-compose.dev.yml up --build",
+    "docker:down": "docker-compose -f docker/docker-compose.dev.yml down"
   },
   "devDependencies": {
     "husky": "^9.1.7",

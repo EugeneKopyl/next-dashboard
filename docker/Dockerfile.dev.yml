@@ -1,0 +1,35 @@
+# Dockerfile.dev
+FROM node:22-alpine
+
+# Installing dependencies for working with Angular CLI
+RUN npm install -g @angular/cli
+
+# Working directory for backend
+WORKDIR /app/backend
+
+# Copying package.json and package-lock.json for backend
+COPY ./backend/package*.json ./
+
+# Installing dependencies for backend
+RUN npm install
+
+# Copying backend source code
+COPY ./backend/. .
+
+# Working directory for frontend
+WORKDIR /app/frontend
+
+# Copying package.json and package-lock.json for frontend
+COPY ./frontend/package*.json ./
+
+# Installing dependencies for frontend
+RUN npm install
+
+# Copying frontend source code
+COPY ./frontend/. .
+
+# Returning to the root directory
+WORKDIR /app
+
+# Command to run the project in development mode
+CMD ["sh", "-c", "cd /app/backend && npm run start:dev & cd /app/frontend && npm run start"]
