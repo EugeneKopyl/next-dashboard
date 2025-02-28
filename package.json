@@ -5,10 +5,10 @@
   "scripts": {
     "start:backend": "cd backend && npm run start:dev",
     "start:frontend": "cd frontend && npm run start",
+    "start": "npm run start:backend && npm run start:frontend",
     "build:backend": "cd backend && npm run build",
     "build:frontend": "cd frontend && npm run build",
-    "docker:up": "docker-compose up --build",
-    "docker:down": "docker-compose down",
+    "build": "npm run build:backend && npm run build:frontend",
     "lint:backend": "cd backend && npm run lint",
     "lint:frontend": "cd frontend && npm run lint",
     "lint": "npm run lint:backend && npm run lint:frontend",
@@ -18,7 +18,9 @@
     "test:backend": "cd backend && npm run test",
     "test:frontend": "cd frontend && npm run test:headless",
     "test": "npm run test:backend && npm run test:frontend",
-    "prepare": "husky init"
+    "prepare": "husky init",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down"
   },
   "devDependencies": {
     "husky": "^9.1.7",
