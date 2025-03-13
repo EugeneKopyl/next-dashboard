@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  imports: [RouterOutlet, ToastModule, CommonModule],
 })
-export class AppComponent {
-  title = 'frontend';
-}
+export class AppComponent {}

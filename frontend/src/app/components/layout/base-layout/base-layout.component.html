@@ -1,0 +1,60 @@
+<div class="grid">
+  <div class="col-2">
+    <div class="card">
+      <p-menu
+        [model]="items"
+        class="flex justify-center"
+        styleClass="w-full md:w-60"
+      >
+        <ng-template #start>
+          <span
+            class="inline-flex w-full justify-content-between items-center gap-1 px-2 py-2"
+          >
+            <span class="text-xl font-semibold">SMCX</span>
+            <span
+              (click)="toggleTheme()"
+              [class]="themeState.icon"
+              class="cursor-pointer z-3"
+            ></span>
+          </span>
+        </ng-template>
+        <ng-template #submenuheader let-item>
+          <span class="text-primary font-bold">{{ item.label }}</span>
+        </ng-template>
+        <ng-template #item let-item>
+          <ng-container *ngIf="item.route; else elseBlock">
+            <a [routerLink]="item.route" class="p-menu-item-link">
+              <span [class]="item.icon"></span>
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </ng-container>
+          <ng-template #elseBlock>
+            <a [href]="item.url" class="p-menu-item-link">
+              <span [class]="item.icon"></span>
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </ng-template>
+        </ng-template>
+        <ng-template #end>
+          <button
+            pRipple
+            class="relative overflow-hidden w-full border-0 bg-transparent flex items-start p-2 pl-4 hover:bg-surface-100 dark:hover:bg-surface-800 rounded-none cursor-pointer transition-colors duration-200"
+          >
+            <p-avatar
+              image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+              class="mr-2"
+              shape="circle"
+            />
+            <span class="inline-flex flex-col">
+              <span class="font-bold">Amy Elsner</span>
+              <span class="text-sm">Admin</span>
+            </span>
+          </button>
+        </ng-template>
+      </p-menu>
+    </div>
+  </div>
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

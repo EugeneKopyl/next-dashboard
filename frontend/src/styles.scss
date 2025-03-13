@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+html.dark-theme {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+html.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
