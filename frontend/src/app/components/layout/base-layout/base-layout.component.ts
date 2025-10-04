@@ -5,8 +5,7 @@ import { BadgeModule } from 'primeng/badge';
 import { RippleModule } from 'primeng/ripple';
 import { AvatarModule } from 'primeng/avatar';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { Button } from 'primeng/button';
+
 import { ThemeService } from '../../../services/theme.service';
 
 @Component({
@@ -16,12 +15,10 @@ import { ThemeService } from '../../../services/theme.service';
   styleUrls: ['./base-layout.component.scss'],
   imports: [
     RouterOutlet,
-    CommonModule,
     MenuModule,
     BadgeModule,
     RippleModule,
     AvatarModule,
-    Button,
     RouterLink,
   ],
 })
